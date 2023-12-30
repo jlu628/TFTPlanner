@@ -1,0 +1,40 @@
+{
+  "name": "tftplanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/server/main.js",
+  "scripts": {
+    "start": "tsc && electron ./dist/server/main.js",
+    "package": "electron-forge package",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Jerry Lu",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "sass": "^1.69.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "build": {
+    "appId": "jlu.gatech.TFTPlanner",
+    "productName": "TFT Planner",
+    "target": "NSIS",
+    "copyright": "Copyright © 2022~2024 Jerry (Jiayu) Lu",
+    "directories": {
+      "output": "build"
+    },
+    "icon": "./dist/assets/tfticon.png",
+    "nsis": {
+        "allowToChangeInstallationDirectory": true,
+        "oneClick": false
+    },
+    "asar": false 
+  }
+}

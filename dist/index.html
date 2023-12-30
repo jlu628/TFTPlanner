@@ -1,0 +1,92 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>TFT Planner</title>
+</head>
+<body class="flexCol flexSpaceBetween">
+    <!-- Title bar -->
+    <div id="titlebar" class="flexRow flexCenter alignCenter">
+        <div id="titlebar-draggable" class="flexRow flexStart fullWidth">
+        </div>
+        <div class="flexRow flexEnd">
+            <div id="minimize-btn" class="titlebar-button flexRow flexCenter alignCenter"><img src="./assets/minimize.png"></div>
+            <div id="maximize-btn" class="titlebar-button flexRow flexCenter alignCenter"><img src="./assets/maximize.png"></div>
+            <div id="close-btn" class="titlebar-button flexRow flexCenter alignCenter"><img src="./assets/close.png"></div>
+        </div>
+    </div>
+
+    <div class="flexRow flexCenter" id="tft-container">
+        <!-- Container for other settings, including teamsize, hex heart and trait emblems -->
+        <div class="flexCol flexStart" id="other-settings-container">
+            <div>Max team size</div>
+            <div class="flexRow flexCenter alignCenter fullWidth">
+                <div id="team-size-decrement" class="flexRow flexCenter alignCenter">-</div>
+                <input id="max-team-size-input" value="9">
+                <div id="team-size-increment" class="flexRow flexCenter alignCenter">+</div>
+            </div>
+
+
+            <div title="Field at least 4 champions to trigger comp suggestion.">
+                Comp suggestion <input id="comp-suggestion-toggle" type="checkbox" checked>
+            </div>
+            <div class="flexRow flexCenter alignCenter fullWidth">
+                <img id="recalculate-comp-suggestion" src="./assets/sync.png">
+            </div>
+
+            <div  style="margin-top: 6.33px;">Tiers to include</div>
+            <div class="flexRow flexCenter alignCenter fullWidth">
+                <input id="comp-suggestion-lower-tier" value="1"> ~ <input id="comp-suggestion-upper-tier" value="5">
+            </div>
+
+            <div>Emblems</div>
+            <div id="emblems-container">
+                <div id="add-emblem"></div>
+            </div>
+
+            <div>Hextech hearts</div>
+            <div id="hextech-hearts-container">
+                <div id="add-hextech-heart"></div>
+            </div>
+        </div>
+
+        <!-- Traits container -->
+        <div id="traits-container"></div>
+
+        <!-- Main board -->
+        <div id="board-container">
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+            <div class="board-slot flexRow flexCenter alignCenter"><img src="./assets/no_champion.png"></div>
+        </div>
+    </div>
+
+    <!-- Bottom champion selector -->
+    <div class="flexCol flexCenter alignCenter" id="champion-select-container">
+        <div id="tier-container" class="flexRow flexCenter">
+            <div id="tier-select-1" class="selected-tier flexRow flexCenter alignCenter" onclick="selectTier(1)"><img src="./assets/coin.png">&nbsp;1</div>
+            <div id="tier-select-2" class="flexRow flexCenter alignCenter" onclick="selectTier(2)"><img src="./assets/coin.png">&nbsp;2</div>
+            <div id="tier-select-3" class="flexRow flexCenter alignCenter" onclick="selectTier(3)"><img src="./assets/coin.png">&nbsp;3</div>
+            <div id="tier-select-4" class="flexRow flexCenter alignCenter" onclick="selectTier(4)"><img src="./assets/coin.png">&nbsp;4</div>
+            <div id="tier-select-5" class="flexRow flexCenter alignCenter" onclick="selectTier(5)"><img src="./assets/coin.png">&nbsp;5</div>
+        </div>
+        <div id="champion-list-container" class="flexRow flexStart alignCenter">
+        </div>
+    </div>
+
+    <div id="popup-overlay" class="flexCenter alignCenter">
+        <div id="popup-selection"></div>
+    </div>
+
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+</html>
